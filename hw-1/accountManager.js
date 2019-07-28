@@ -6,11 +6,6 @@ class AccountManager extends Writable {
         super(options);
         this._data = [];
 
-        this.on('finish', () => {
-            console.log('Data has received by Account Manager:');
-            this._data.forEach(item => console.log(item));
-        });
-
         this.on('error', ({ message }) => {
             console.log(message);
             process.exit(1);
